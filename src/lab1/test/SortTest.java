@@ -1,6 +1,6 @@
-package test;
+package lab1.test;
 
-import main.BucketSort;
+import lab1.main.BucketSort;
 import org.junit.Test;
 
 import java.util.Arrays;

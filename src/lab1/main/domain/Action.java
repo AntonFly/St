@@ -1,4 +1,4 @@
-package main.domain;
+package lab1.main.domain;
 
 public class Action {
     public Action(State action) {

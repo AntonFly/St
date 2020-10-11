@@ -59,5 +59,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="au.com.bytecode:opencsv:2.4" level="project" />
+    <orderEntry type="library" name="org.mockito:mockito-core:2.24.0" level="project" />
   </component>
 </module>

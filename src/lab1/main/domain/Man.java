@@ -1,4 +1,4 @@
-package main.domain;
+package lab1.main.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;

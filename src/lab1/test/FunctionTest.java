@@ -1,6 +1,6 @@
-package test;
+package lab1.test;
 
-import main.Arccos;
+import lab1.main.Arccos;
 import org.junit.Test;
 
 

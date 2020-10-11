@@ -1,6 +1,6 @@
-package test;
+package lab1.test;
 
-import main.domain.*;
+import lab1.main.domain.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
