@@ -10,7 +10,7 @@ import static org.mockito.Mockito.when;
 
 public class TrigCalculatorTest {
     @Test
-    public void sinCorrect(){
+    public void sin(){
         Sin mockSin = mock(Sin.class);
         when(mockSin.compute(1, 1.0)).thenReturn(1.0);
         TrigCalculator trigEval = new TrigCalculator(mockSin);
@@ -19,7 +19,7 @@ public class TrigCalculatorTest {
     }
 
     @Test
-    public void cosCorrect(){
+    public void cos(){
         Sin mockSin = mock(Sin.class);
         when(mockSin.compute(10.0 + Math.PI / 2, 1.0)).thenReturn(5.0);
         TrigCalculator trigEval = new TrigCalculator(mockSin);
@@ -28,7 +28,7 @@ public class TrigCalculatorTest {
     }
 
     @Test
-    public void tanCorrect(){
+    public void tan(){
         Sin mockSin = mock(Sin.class);
         when(mockSin.compute(10.0, 1.0)).thenReturn(10.0);
         when(mockSin.compute(10.0 + Math.PI / 2, 1.0)).thenReturn(-1.0);
@@ -38,7 +38,7 @@ public class TrigCalculatorTest {
     }
 
     @Test
-    public void cotCorrect(){
+    public void cot(){
         Sin mockSin = mock(Sin.class);
         when(mockSin.compute(10.0, 1.0)).thenReturn(10.0);
         when(mockSin.compute(10.0 + Math.PI / 2, 1.0)).thenReturn(5.0);
@@ -48,7 +48,7 @@ public class TrigCalculatorTest {
     }
 
     @Test
-    public void cscCorrect(){
+    public void csc(){
         Sin mockSin = mock(Sin.class);
         when(mockSin.compute(10.0, 1.0)).thenReturn(10.0);
         TrigCalculator trigEval = new TrigCalculator(mockSin);
@@ -59,7 +59,7 @@ public class TrigCalculatorTest {
 
 
     @Test
-    public void sinValidation(){
+    public void sinTest(){
         TrigCalculator trigEval = new TrigCalculator(new Sin());
         assertEquals(Double.NaN, trigEval.sin(Double.NaN, 1.0));
         assertEquals(Double.NaN, trigEval.sin(Double.POSITIVE_INFINITY, 1.0));
@@ -67,7 +67,7 @@ public class TrigCalculatorTest {
     }
 
     @Test
-    public void cosValidation(){
+    public void cosTest(){
         TrigCalculator trigEval = new TrigCalculator(new Sin());
         assertEquals(Double.NaN, trigEval.cos(Double.NaN, 1.0));
         assertEquals(Double.NaN, trigEval.cos(Double.POSITIVE_INFINITY, 1.0));
@@ -75,7 +75,7 @@ public class TrigCalculatorTest {
     }
 
     @Test
-    public void tanValidation(){
+    public void tanTest(){
         TrigCalculator trigEval = new TrigCalculator(new Sin());
         assertEquals(Double.NaN, trigEval.tan(Double.NaN, 1.0));
         assertEquals(Double.NaN, trigEval.tan(Double.POSITIVE_INFINITY, 1.0));

@@ -28,6 +28,8 @@ public class SocialauthTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
+    System.setProperty("webdriver.chrome.driver", "C:\\Users\\antonAdmin\\IdeaProjects\\ST\\St\\src\\lab3\\chromedriver.exe");
+    System.setProperty("webdriver.chrome.whitelistedIps", "199.30.228.112");
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -53,13 +55,13 @@ public class SocialauthTest {
   public void socialauth() {
     driver.get("https://www.domaintools.com/");
     driver.manage().window().setSize(new Dimension(1920, 1040));
-    driver.findElement(By.cssSelector(".login:nth-child(2) > a")).click();
+    driver.findElement(By.xpath("//a[contains(text(),\'Login\')]")).click();
     vars.put("window_handles", driver.getWindowHandles());
-    driver.findElement(By.cssSelector(".connector-label")).click();
+    driver.findElement(By.xpath("//div[@id=\'google-signin-button\']/div[2]")).click();
     vars.put("win8290", waitForWindow(2000));
     vars.put("root", driver.getWindowHandle());
     driver.switchTo().window(vars.get("win8290").toString());
-    driver.findElement(By.cssSelector(".JDAKTe:nth-child(1) .w1I7fb")).click();
+    driver.findElement(By.xpath("//div[@id=\'view_container\']/div/div/div[2]/div/div/div/form/span/section/div/div/div/div/ul/li/div/div/div/div[2]/div")).click();
     driver.close();
     driver.switchTo().window(vars.get("root").toString());
   }

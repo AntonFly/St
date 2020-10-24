@@ -12,7 +12,7 @@ public class FuncCalculatorTest {
     double eps =1E-6;
 
     @Test
-    public void positiveAreaCheck(){
+    public void positive(){
         LogCalculator logEvalMock = mock(LogCalculator.class);
         when(logEvalMock.log(313.0, 3.0, eps)).thenReturn(1.0);
         when(logEvalMock.log(313.0, 10.0, eps)).thenReturn(1.0);
@@ -28,7 +28,7 @@ public class FuncCalculatorTest {
     }
 
     @Test
-    public void negativeAreaCheck(){
+    public void negative(){
         TrigCalculator trigEvalMock = mock(TrigCalculator.class);
         when(trigEvalMock.sin(-313.0, eps)).thenReturn(-313.0);
         when(trigEvalMock.csc(-313.0, eps)).thenReturn(-313.0);

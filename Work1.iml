@@ -61,5 +61,6 @@
     </orderEntry>
     <orderEntry type="library" name="au.com.bytecode:opencsv:2.4" level="project" />
     <orderEntry type="library" name="org.mockito:mockito-core:2.24.0" level="project" />
+    <orderEntry type="library" name="org.seleniumhq.selenium:selenium-java:3.141.59" level="project" />
   </component>
 </module>

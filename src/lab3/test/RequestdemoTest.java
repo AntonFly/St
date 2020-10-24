@@ -28,6 +28,8 @@ public class RequestdemoTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
+    System.setProperty("webdriver.chrome.driver", "C:\\Users\\antonAdmin\\IdeaProjects\\ST\\St\\src\\lab3\\chromedriver.exe");
+    System.setProperty("webdriver.chrome.whitelistedIps", "199.30.228.112");
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();

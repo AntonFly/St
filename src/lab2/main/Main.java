@@ -14,7 +14,7 @@ public class Main {
 
         System.out.println(sin.compute(x,eps));
         System.out.println(Math.sin(x));
-        function.createCSV(0,10,0.0001);
+        function.createCSV(-5,5,0.01);
 
     }
 }
