@@ -30,6 +30,14 @@ public class OverviewproductsTest {
   public void setUp() {
     System.setProperty("webdriver.chrome.driver", "C:\\Users\\antonAdmin\\IdeaProjects\\ST\\St\\src\\lab3\\chromedriver.exe");
     System.setProperty("webdriver.chrome.whitelistedIps", "199.30.228.112");
+    System.setProperty("webdriver.gecko.driver", "C:\\Users\\antonAdmin\\IdeaProjects\\ST\\St\\src\\lab3\\geckodriver.exe");
+    System.setProperty("webdriver.gecko.whitelistedIps", "199.30.228.112");
+    String driverType = System.getenv("DRIVER");
+    if(driverType.equals("CHROME")) {
+      driver = new ChromeDriver();
+    }else if(driverType.equals("FIREFOX")){
+      driver = new FirefoxDriver();
+    }
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -43,6 +51,6 @@ public class OverviewproductsTest {
     driver.get("https://www.domaintools.com/");
     driver.manage().window().setSize(new Dimension(1920, 1040));
     driver.findElement(By.xpath("//a[contains(text(),\'Products\')]")).click();
-    driver.findElement(By.cssSelector(".open .overview > a")).click();
+    driver.findElement(By.xpath("//a[contains(text(),'Overview')]")).click();
   }
 }

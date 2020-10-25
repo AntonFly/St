@@ -30,7 +30,14 @@ public class LookupdomaininfobyIpTest {
   public void setUp() {
     System.setProperty("webdriver.chrome.driver", "C:\\Users\\antonAdmin\\IdeaProjects\\ST\\St\\src\\lab3\\chromedriver.exe");
     System.setProperty("webdriver.chrome.whitelistedIps", "199.30.228.112");
-    driver = new ChromeDriver();
+    System.setProperty("webdriver.gecko.driver", "C:\\Users\\antonAdmin\\IdeaProjects\\ST\\St\\src\\lab3\\geckodriver.exe");
+    System.setProperty("webdriver.gecko.whitelistedIps", "199.30.228.112");
+    String driverType = System.getenv("DRIVER");
+    if(driverType.equals("CHROME")) {
+      driver = new ChromeDriver();
+    }else if(driverType.equals("FIREFOX")){
+      driver = new FirefoxDriver();
+    }
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -53,7 +60,7 @@ public class LookupdomaininfobyIpTest {
       builder.moveToElement(element, 0, 0).perform();
     }
     driver.findElement(By.xpath("//a[contains(text(),\'Research\')]")).click();
-    driver.findElement(By.xpath("//div[2]/ul/li/a")).click();
+    driver.findElement(By.xpath("//div[@id='navbar-collapse-1']/ul/li/a")).click();
     driver.findElement(By.xpath("//a[contains(text(),\'IP Whois Lookup\')]")).click();
     driver.findElement(By.xpath("//input[@id=\'landing-whois\']")).click();
     driver.findElement(By.xpath("//input[@id=\'landing-whois\']")).sendKeys("152.136.58.24");
